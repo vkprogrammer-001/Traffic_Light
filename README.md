@@ -10,11 +10,15 @@ When you press one of the color buttons on the controller pole, the correspondin
 
 In addition to the color buttons, there is also a reset button. Clicking this button will reset the traffic light to its initial state, where all the lights are slightly faded. This represents a state where the traffic light is not active.
 
+<img width="1438" alt="Screenshot 2024-02-20 at 7 44 32 PM" src="https://github.com/vkprogrammer-001/Traffic_Light/assets/143318563/7ea064d5-cc96-4203-8ae9-f8f74bc965b7">
 
 ## How to Use
 
 1. **Select a color**: Choose a color from the controller pole by clicking on the red, yellow, or green button. The corresponding light on the traffic light will glow.
 2. **Reset the system**: If you want to reset the traffic light to its initial state, click the reset button. All the lights on the traffic light will return to their slightly faded appearance.
+
+<img width="1439" alt="Screenshot 2024-02-20 at 7 44 51 PM" src="https://github.com/vkprogrammer-001/Traffic_Light/assets/143318563/771618cf-2709-403e-837d-b3f908f6168a">
+
 
 ## Future Enhancements
 
