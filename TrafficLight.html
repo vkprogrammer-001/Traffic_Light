@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic light project</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .head1 {
+            border: 1px none black;
+            height: 180px;
+            width: 50px;
+            position: absolute;
+            top: 160px;
+            left: 65px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 2px rgb(104, 104, 104);
+        }
+
+        .head2 {
+            border: 1px none black;
+            height: 180px;
+            width: 50px;
+            position: absolute;
+            top: 240px;
+            left: 89%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 2px rgb(104, 104, 104);
+        }
+
+        .pole1 {
+            border: 10px solid black;
+            height: 250px;
+            width: 0px;
+            position: absolute;
+            top: 340px;
+            left: 80px;
+        }
+
+        .pole2 {
+            border: 10px solid black;
+            height: 160px;
+            width: 0px;
+            position: absolute;
+            top: 420px;
+            left: 90%;
+        }
+
+        .head1>div,
+        .head2>div {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+        .head2>div:hover {
+            cursor:grab;
+        }
+        .head2>div:active{
+            cursor:grabbing;
+        }
+        button{
+            height: 40px;
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="position: absolute;top:630px;left: 24px;">Traffic Light</h2>
+    <h2 style="position: absolute;top:630px;left: 86%;">Controller Poll</h2>
+    <button style="position: absolute;top:300px;left: 45%" onclick="Reset()">RESET</button>
+    <div class="head1">
+        <div id="red" style="position: absolute;top:20px;left: 4px;background-color: rgba(255, 0, 0, 0.587);"></div>
+        <div id="yellow" style="position: absolute;top:70px;left: 4px;background-color: rgba(255, 255, 0, 0.587);">
+        </div>
+        <div id="green" style="position: absolute;top:120px;left: 4px;background-color: rgba(0, 128, 0, 0.587);"></div>
+    </div>
+    <div class="pole1"></div>
+    <div class="head2">
+        <div style="position: absolute;top:20px;left: 4px;background-color: red;" onclick="changeRed()"></div>
+        <div style="position: absolute;top:70px;left: 4px;background-color: yellow;" onclick="changeYellow()"></div>
+        <div style="position: absolute;top:120px;left: 4px;background-color: green;" onclick="changeGreen()"></div>
+    </div>
+    <div class="pole2"></div>
+    <div style="width:100%;border:6px solid black;position: absolute;top:600px;"></div>
+    <script>
+        function changeRed() {
+            let color="red";
+            document.getElementById("red").style.backgroundColor = color;
+            document.getElementById("red").style.boxShadow = "0px 0px 4px 2px red";
+            Fade(color)
+        }
+        function changeYellow() {
+            let color="yellow";
+            document.getElementById("yellow").style.backgroundColor = color;
+            document.getElementById("yellow").style.boxShadow = "0px 0px 10px 2px yellow";
+            Fade(color)
+        }
+        function changeGreen() {
+            let color="green";
+            document.getElementById("green").style.backgroundColor = color;
+            document.getElementById("green").style.boxShadow = "0px 0px 4px 2px green";
+            Fade(color)
+        }
+        function Fade(color){
+            if (color=="red"){
+                document.getElementById("yellow").style.backgroundColor = "rgba(255, 255, 0, 0.587)";
+                document.getElementById("yellow").style.boxShadow = "none";
+                document.getElementById("green").style.backgroundColor = "rgba(0, 128, 0, 0.587)";
+                document.getElementById("green").style.boxShadow = "none";
+            }else if(color=="yellow"){
+                document.getElementById("red").style.backgroundColor = "rgba(255, 0, 0, 0.587)";
+                document.getElementById("red").style.boxShadow = "none";
+                document.getElementById("green").style.backgroundColor = "rgba(0, 128, 0, 0.587)";
+                document.getElementById("green").style.boxShadow = "none";
+            }else{
+                document.getElementById("red").style.backgroundColor = "rgba(255, 0, 0, 0.587)";document.getElementById("red").style.boxShadow = "none";
+                document.getElementById("yellow").style.backgroundColor = "rgba(255, 255, 0, 0.587)";
+                document.getElementById("yellow").style.boxShadow = "none";
+            }
+        }
+        function Reset(){
+            document.getElementById("red").style.backgroundColor = "rgba(255, 0, 0, 0.587)";
+            document.getElementById("red").style.boxShadow = "none";
+            document.getElementById("yellow").style.backgroundColor = "rgba(255, 255, 0, 0.587)";
+            document.getElementById("yellow").style.boxShadow = "none";
+            document.getElementById("green").style.backgroundColor = "rgba(0, 128, 0, 0.587)";
+            document.getElementById("green").style.boxShadow = "none";
+        }
+    </script>
+</body>
+
+</html>
